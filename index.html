@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+</head>
+<body>
+  <main>
+    <div class="card-1">
+      <div class="star">
+        <img src="./images/icon-star.svg" alt="star">
+      </div>
+      <!-- Asking -->
+      <h2>
+        How did we do?
+      </h2>
+      <!-- Description -->
+      <P>
+        Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+      </P>
+      <!-- Rating number -->
+      <div class="rating-number">
+        <div class="rating-point">
+          <p>1</p>
+        </div>
+        <div class="rating-point">
+          <p>2</p>
+        </div>
+        <div class="rating-point">
+          <p>3</p>
+        </div>
+        <div class="rating-point">
+          <p>4</p>
+        </div>
+        <div class="rating-point">
+          <p>5</p>
+        </div>
+      </div>
+      <!-- Button -->
+      <button>SUBMIT</button>
+    </div>
+    <!-- ---------- -->
+    <div class="card-2">
+      <div class="thanks-img">
+        <img src="./images/illustration-thank-you.svg" alt="Thank you">
+      </div>
+      <div class="select">
+        <p>
+          You selected <a id="Rating-score"></a> out of 5
+        </p>
+      </div>
+      <h2>Thank you!</h2>
+
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
+      </p>
+    
+    </div>
+  </main>
+
+  <!-- Thank you state end -->
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+<script>
+  
+  //Rating star
+  var ratingPoints = document.querySelectorAll('.rating-point');
+  var rateCheck = 0
+
+  ratingPoints.forEach(element => {
+    element.onclick = function() {
+
+      document.getElementById('Rating-score').innerHTML = element.textContent
+      
+      if(element.classList.contains('rating-number-change')) {
+        element.classList.remove('rating-number-change');
+      } else {
+        element.classList.add('rating-number-change');
+      }
+
+      var btn = document.querySelector('button');
+      var card2 = document.querySelector('.card-2');
+
+      function appear() { 
+        card2.classList.add('card-2-visible');
+      }
+
+      btn.onclick = function() { appear() } ;
+
+    }
+  });
+
+  
+  
+  //Nút submit
+
+
+
+</script>
+</html>
